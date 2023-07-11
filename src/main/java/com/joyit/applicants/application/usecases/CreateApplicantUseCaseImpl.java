@@ -13,7 +13,7 @@ public class CreateApplicantUseCaseImpl implements CreateApplicantUseCase {
     }
 
     @Override
-    public Applicant createPostulante(Applicant applicant){
+    public Applicant createApplicant(Applicant applicant){
         return applicantRepositoryPort.save(applicant);
     }
 

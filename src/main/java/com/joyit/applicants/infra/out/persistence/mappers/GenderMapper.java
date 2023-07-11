@@ -7,16 +7,16 @@ public class GenderMapper {
     public static Gender entityToDomain(GenderEntity genderEntity){
         Gender gender = new Gender();
         gender.setId(genderEntity.getId());
-        gender.setValue(genderEntity.getValue());
-        gender.setEstReg(EstRegMapper.entityToDomain(genderEntity.getEstRegEntity()));
+//        gender.setValue(genderEntity.getValue());
+//        gender.setEstReg(EstRegMapper.entityToDomain(genderEntity.getEstRegEntity()));
         return gender;
     }
 
     public static GenderEntity domainToEntity(Gender gender){
         GenderEntity genderEntity = new GenderEntity();
         genderEntity.setId(gender.getId());
-        genderEntity.setValue(gender.getValue());
-        genderEntity.setEstRegEntity(EstRegMapper.domainToEntity(gender.getEstReg()));
+//        genderEntity.setValue(gender.getValue());
+//        genderEntity.setEstRegEntity(EstRegMapper.domainToEntity(gender.getEstReg()));
         return genderEntity;
     }
 }

@@ -11,7 +11,7 @@ public class ApplicantService implements CreateApplicantUseCase {
     }
 
     @Override
-    public Applicant createPostulante(Applicant applicant){
-        return createApplicantUseCase.createPostulante(applicant);
+    public Applicant createApplicant(Applicant applicant){
+        return createApplicantUseCase.createApplicant(applicant);
     }
 }

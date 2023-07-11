@@ -7,16 +7,16 @@ public class EstRegMapper {
     public static EstReg entityToDomain(EstRegEntity estRegEntity){
         EstReg estReg = new EstReg();
         estReg.setId(estRegEntity.getId());
-        estReg.setValue(estRegEntity.getValue());
-        estReg.setEstReg(estRegEntity.getEstReg());
+//        estReg.setValue(estRegEntity.getValue());
+//        estReg.setEstReg(estRegEntity.getEstReg());
         return estReg;
     }
 
     public static EstRegEntity domainToEntity(EstReg estReg){
         EstRegEntity estRegEntity = new EstRegEntity();
         estRegEntity.setId(estReg.getId());
-        estRegEntity.setValue(estReg.getValue());
-        estRegEntity.setEstReg(estReg.getEstReg());
+//        estRegEntity.setValue(estReg.getValue());
+//        estRegEntity.setEstReg(estReg.getEstReg());
         return estRegEntity;
     }
 }

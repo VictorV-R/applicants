@@ -10,6 +10,8 @@ public class ApplicantMapper {
         applicant.setName(applicantEntity.getName());
         applicant.setLastName(applicantEntity.getLastName());
         applicant.setGender(GenderMapper.entityToDomain(applicantEntity.getGenderEntity()));
+        applicant.setCivilStatus(CivilStatusMapper.entityToDomain(applicantEntity.getCivilStatusEntity()));
+        applicant.setEstReg(EstRegMapper.entityToDomain(applicantEntity.getEstRegEntity()));
         return applicant;
     }
 
@@ -19,6 +21,8 @@ public class ApplicantMapper {
         applicantEntity.setName(applicant.getName());
         applicantEntity.setLastName(applicant.getLastName());
         applicantEntity.setGenderEntity(GenderMapper.domainToEntity(applicant.getGender()));
+        applicantEntity.setCivilStatusEntity(CivilStatusMapper.domainToEntity(applicant.getCivilStatus()));
+        applicantEntity.setEstRegEntity(EstRegMapper.domainToEntity(applicant.getEstReg()));
         return applicantEntity;
     }
 }
