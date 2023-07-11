@@ -17,6 +17,13 @@ public class ApplicantController {
         this.applicantService = applicantService;
     }
 
+    @GetMapping
+    public List<Applicant> all(){
+        List<Applicant> applicants = applicantService.findAllApplicant();
+        return new ResponseEntity<>(applicants, HttpStatus.FOUND).getBody();
+
+    }
+
     @PostMapping
     public ResponseEntity<Applicant> createPostulante(@RequestBody Applicant applicant) {
         Applicant createdApplicant = applicantService.createApplicant(applicant);

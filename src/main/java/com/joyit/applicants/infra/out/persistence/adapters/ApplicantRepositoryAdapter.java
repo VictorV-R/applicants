@@ -7,6 +7,9 @@ import com.joyit.applicants.infra.out.persistence.mappers.ApplicantMapper;
 import com.joyit.applicants.infra.out.persistence.repository.ApplicantRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ApplicantRepositoryAdapter implements ApplicantRepositoryPort {
     private final ApplicantRepository applicantRepository;
@@ -20,5 +23,14 @@ public class ApplicantRepositoryAdapter implements ApplicantRepositoryPort {
         ApplicantEntity applicantEntity = ApplicantMapper.domainToEntity(applicant);
         ApplicantEntity savedApplicantEntity = applicantRepository.save(applicantEntity);
         return ApplicantMapper.entityToDomain(savedApplicantEntity);
+    }
+
+    @Override
+    public List<Applicant> getApplicants() {
+        List<ApplicantEntity> applicantEntityList = applicantRepository.findAll();
+        List<Applicant> applicantList = new ArrayList<>();
+        for(ApplicantEntity applicantEntity : applicantEntityList)
+            applicantList.add(ApplicantMapper.entityToDomain(applicantEntity));
+        return applicantList;
     }
 }
